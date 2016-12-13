@@ -1,0 +1,38 @@
+﻿@model DiveRepo.DiveTracker
+@{
+    ViewBag.Title = "AddPosition";
+}
+
+<h2>AddPosition</h2>
+
+
+
+<div class="container">
+    <div class="row">
+        <div>
+            <form action="/Dive/AddPosition" class="form-group" method="POST">
+
+                level: <select name="Sikker">
+                    <option value="1">Admin</option>
+                    <option value="2">Bruger</option>
+
+                </select>
+                <br />
+
+
+                <input name="email" type="text" class="form-control" />
+                <br />
+                Navn:<input type="text" name="navn" class="form-control" />
+                <br />
+                Adgangskode:<input type="text" name="adgangskode" class="form-control" />
+                <br />
+               
+                <br />
+                <input id="submit1" type="submit" value="Gem" class="btn btn-info" />
+                @ViewBag.MSG
+
+
+            </form>
+        </div>
+    </div>
+</div>
