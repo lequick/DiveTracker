@@ -261,7 +261,8 @@ namespace DiveRepo
 
             foreach (var map in mappings)
             {
-                if (map.Key.ToLower() != "id")
+
+                if (map.Key.ToLower() != "id" && pro.GetType().GetProperty(map.Key).GetValue(pro, null) != null)
                 {
                     columns += map.Value + ", ";
                     parms += "@" + map.Key + ", ";
@@ -276,7 +277,7 @@ namespace DiveRepo
 
                 foreach (var prop in mappings)
                 {
-                    if (prop.Key.ToLower() != "id")
+                    if (prop.Key.ToLower() != "id" && pro.GetType().GetProperty(prop.Key).GetValue(pro, null) != null)
                     {
                         cmd.Parameters.AddWithValue(prop.Key, pro.GetType().GetProperty(prop.Key).GetValue(pro, null));
                     }

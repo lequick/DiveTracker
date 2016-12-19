@@ -1,4 +1,5 @@
-﻿@model DiveRepo.DiveTracker
+﻿@using DiveRepo
+@model List<DiveRepo.DiveTracker>
 @{
     ViewBag.Title = "AddPosition";
 }
@@ -10,29 +11,147 @@
 <div class="container">
     <div class="row">
         <div>
-            <form action="/Dive/AddPosition" class="form-group" method="POST">
+            <form action="/Dive/AddPosition" class="form-group" method="POST" enctype="multipart/form-data">
 
-                level: <select name="Sikker">
-                    <option value="1">Admin</option>
-                    <option value="2">Bruger</option>
+                Sikker?: <select name="Sikker">
+                    <option value="0">nej</option>
+                    <option value="1">ja</option>
 
                 </select>
+                <select name="IkonID">
+                    <option value="1">FyldeSted</option>
+                    <option value="2">SlæbeSted</option>
+                    <option value="3">Spot</option>
+                </select>
+
+
+
+                <br />
+
+                navn <input name="Navn" type="text" class="form-control" />
+                <br />
+
+                Latitude N:<input name="Latitude" type="text" class="form-control" />
+
+
+                <br />Longtitude E: <input name="Longitude" type="text" class="form-control" />
+                <br />
+                LongtitudeDec: <input name="LongitudeDec" type="text" class="form-control" />
+                <br />
+
+                LatitudeDec:<input name="LatitudeDec" type="text" class="form-control" />
+                <br />
+
+                afstand til land: <input name="LandAfstand" type="text" class="form-control" />
                 <br />
 
 
-                <input name="email" type="text" class="form-control" />
+
                 <br />
-                Navn:<input type="text" name="navn" class="form-control" />
+
                 <br />
-                Adgangskode:<input type="text" name="adgangskode" class="form-control" />
+
+                <input name="Billeder" type="file" />
+
+
                 <br />
-               
+                Beskrivelse  <textarea class="form-control Tekstfelt" name="Beskrivelse" type="text"> Skriv en note om Stedet her. </textarea>
                 <br />
-                <input id="submit1" type="submit" value="Gem" class="btn btn-info" />
-                @ViewBag.MSG
+                <input id="submit" type="submit" value="Gem" class="btn btn-info" />
+
+
+
+
 
 
             </form>
         </div>
     </div>
 </div>
+
+@ViewBag.MSG
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAa3-askrTqq2WxPI_l1jTn9udhrnro0c4" type="text/javascript"></script>-->
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=AIzaSyAa3-askrTqq2WxPI_l1jTn9udhrnro0c4" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+
+        function AddAlert(url, message) {
+
+            alert(message);
+            window.open(url, '_self');
+
+            return true;
+
+        }
+
+    </script>
+</head>
+<body>
+
+
+    <h1>Vragkort</h1>
+    <div id="map" style="width: 600px; height: 620px; margin-top: auto auto auto auto;">
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        var baseIcon = new GIcon(G_DEFAULT_ICON);
+        var baseIcon = new GIcon();
+        baseIcon.image = "/Content/Icons/Spot.png";
+        baseIcon.iconSize = new GSize(34, 25);
+        baseIcon.shadowSize = new GSize(34, 25);
+        baseIcon.iconAnchor = new GPoint(34, 25);
+        baseIcon.infoWindowAnchor = new GPoint(10, 21);
+        baseIcon.infoShadowAnchor = new GPoint(10, 21);
+
+        function createMarker(point, html) {
+            var marker = new GMarker(point, { icon: baseIcon, title: "My House" });
+
+            GEvent.addListener(marker, 'click', function() {
+                marker.openInfoWindowHtml(html, { maxWidth: 240 });
+            });
+            return marker;
+        }
+
+        function addMarker(gpsLong, gpsLat, html) {
+            point = new GLatLng(gpsLat, gpsLong);
+            marker = createMarker(point, html);
+            map.addOverlay(marker);
+        }
+
+        var map;
+
+        function onLoad() {
+            map = new GMap2(document.getElementById("map"));
+            map.setCenter(new GLatLng(56.30123, 10.58633), 8);
+            map.addControl(new GLargeMapControl());
+            map.addControl(new GMapTypeControl());
+            map.enableDoubleClickZoom();
+            map.enableScrollWheelZoom();
+            var point, marker, html;
+
+
+
+
+            @foreach (DiveTracker dt in Model)
+                            {
+                                @:html = "<font color=#000000><b>@dt.Navn</b></font><br><br><table width=270><tr><td width=120><img src='Vrag/Billeder/NoImage.png' width='120' height='80' class='img3' /><td><td><b>GPS:</b><br>Lat: 11.06371<br>Long: 56.19413<br/>Dybte: 14 m.<br/><br/><a href='#' onClick=MyWind1=window.open('VisVrag.aspx?id=1&zoom=15','MyWind1','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,width=650,height=497'); return false;>Vis vragbeskrivelse</a><br/></td></tr></table>";
+
+                                @:addMarker(@dt.LongitudeDec, @dt.LatitudeDec, html);
+                                        }
+        }
+        window.onload=onLoad;
+        window.onunload=GUnload;
+        //]]>
+    </script>
+
+</body>
+</html>
+
+
+
+
