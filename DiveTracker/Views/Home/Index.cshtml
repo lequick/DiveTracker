@@ -4,3 +4,98 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<div class="container-fluid hidden-lg">
+    <div class="row">
+        <header>
+            <nav class="col-md-2">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div>
+                        <select>
+                            <option value="" disabled selected>Vælg landsdel</option>
+                            <option value="nordjylland">Nordjylland</option>
+                            <option value="oestjylland">Østjylland</option>
+                            <option value="vestjylland">Vestjylland</option>
+                            <option value="sydjylland">Sydjylland</option>
+                            <option value="fyn">Fyn</option>
+                            <option value="sjaelland">Sjælland</option>
+                            <option value="lolfals">Lolland, Falster</option>
+                            <option value="bornholm">Bornholm</option>
+                        </select>
+
+                        <div class="search">
+                            <span class="fa fa-search"></span>
+                            <input placeholder="Søg på position...">
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="#">Positions liste</a></li>
+                        <li><a href="#">Bedste bedømte</a></li>
+                        <li><a href="#">Nyeste positioner</a></li>
+                        <li><a href="#">Opret position</a></li>
+                    </ul>
+                </div>
+
+
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+                <script>
+                        function openNav() {
+                            document.getElementById("mySidenav").style.width = "250px";
+                        }
+
+                        function closeNav() {
+                            document.getElementById("mySidenav").style.width = "0";
+                        }
+                </script>
+
+            </nav>
+        </header>
+    </div>
+
+</div>
+
+@*________________________________END_MOBILE&TABLET__________________________*@
+<div class="container-fluid hidden-xs hidden-sm hidden-md">
+    <div class="row">
+        <header>
+            <nav class="col-lg-2 deskNav BoxShadow">
+                <div class="navBox">
+                    <ul>
+                        <li><h1>SPOT MENU</h1></li>
+                        <li>
+                            <select>
+                                <option value="" disabled selected>Vælg landsdel</option>
+                                <option value="nordjylland">Nordjylland</option>
+                                <option value="oestjylland">Østjylland</option>
+                                <option value="vestjylland">Vestjylland</option>
+                                <option value="sydjylland">Sydjylland</option>
+                                <option value="fyn">Fyn</option>
+                                <option value="sjaelland">Sjælland</option>
+                                <option value="lolfals">Lolland, Falster</option>
+                                <option value="bornholm">Bornholm</option>
+                            </select>
+                        </li>
+                        <li>
+                            <div class="search">
+                                <span class="fa fa-search"></span>
+                                <input placeholder="Søg på position...">
+                            </div>
+                        </li>
+                        <li><a href="#">Positions liste</a></li>
+                        <li><a href="#">Bedste bedømte</a></li>
+                        <li><a href="#">Nyeste positioner</a></li>
+                        <li><a href="#">Opret position</a></li>
+                        <li class="spotType"><h1>SPOT TYPE</h1></li>
+                        <li>
+                            <ul class="spotPick">
+                                <li class="snorkling"><a href="#">Snorkling/UV-jagt</a></li>
+                                <li class="vrag"><a href="#">Skibsvrag</a></li>
+                                <li class="natur"><a href="#">Natur</a></li>
+                                <li class="andet"><a href="#">Andet</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
