@@ -1,10 +1,10 @@
 ﻿@using DiveRepo
 @model List<DiveRepo.DiveTracker>
 @{
-    ViewBag.Title = "AddPosition";
+    ViewBag.Title = "Tilføj position";
 }
 
-<h2>AddPosition</h2>
+<h2>Tilføj position</h2>
 
 
 
@@ -13,7 +13,7 @@
         <div>
             <form action="/Dive/AddPosition" class="form-group" method="POST" enctype="multipart/form-data">
 
-                Sikker?: <select name="Sikker">
+                <label>Sikker?: </label><select name="Sikker">
                     <option value="0">nej</option>
                     <option value="1">ja</option>
 

@@ -211,11 +211,12 @@
     @*______________________________V1 END___________________________*@
 
 
-    <header>
 
-        @*_____________________MOBILE&TABLET__________________________*@
-        <div class="container-fluid hidden-lg">
-            <div class="row">
+
+    @*_____________________MOBILE&TABLET__________________________*@
+    @*<div class="container-fluid hidden-lg">
+        <div class="row">
+            <header>
                 <nav class="col-md-2">
                     <div id="mySidenav" class="sidenav">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -259,15 +260,15 @@
                     </script>
 
                 </nav>
-
-            </div>
-
+            </header>
         </div>
 
-        @*________________________________END_MOBILE&TABLET__________________________*@
-        <div class="container-fluid hidden-xs hidden-sm hidden-md">
-            <div class="row">
+    </div>*@
 
+    @*________________________________END_MOBILE&TABLET__________________________*@
+    @*<div class="container-fluid hidden-xs hidden-sm hidden-md">
+        <div class="row">
+            <header>
                 <nav class="col-lg-2 deskNav BoxShadow">
                     <div class="navBox">
                         <ul>
@@ -307,77 +308,78 @@
                         </ul>
                     </div>
                 </nav>
-                <section>
-                    <div id="map" class="map-container map">
+            </header>*@
+            @*<section>*@
+                @*<div id="map" class="map-container map">
 
 
 
 
-                        <script>
+                    <script>
 
 
 
 
 
-                            var map;
-                            function initMap() {
-                                map = new google.maps.Map(document.getElementById('map'), {
-                                    center: { lat: 56.434003, lng: 10.871666 },
-                                    zoom: 7,
-                                    styles: [
-            {
-                "featureType": "all",
-                "elementType": "all",
-                "stylers": [
-                    {
-                        "invert_lightness": true
-                    },
-                    {
-                        "saturation": 10
-                    },
-                    {
-                        "lightness": 30
-                    },
-                    {
-                        "gamma": 0.5
-                    },
-                    {
-                        "hue": "#435158"
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#14244a"
-                    }
-                ]
-            },
-            {
-                "featureType": "water",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#1a8dc1"
-                    }
-                ]
-            }
-                                    ]
-                                });
+                        var map;
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: { lat: 56.434003, lng: 10.871666 },
+                                zoom: 7,
+                                styles: [
+        {
+            "featureType": "all",
+            "elementType": "all",
+            "stylers": [
+                {
+                    "invert_lightness": true
+                },
+                {
+                    "saturation": 10
+                },
+                {
+                    "lightness": 30
+                },
+                {
+                    "gamma": 0.5
+                },
+                {
+                    "hue": "#435158"
+                }
+            ]
+        },
+        {
+            "featureType": "landscape",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#14244a"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry.fill",
+            "stylers": [
+                {
+                    "color": "#1a8dc1"
+                }
+            ]
+        }
+                                ]
+                            });
 
-                            }
-                        </script>
+                        }
+                    </script>
 
-                    </div>
-                    <img class="logo" src="~/Content/SASS/GFX/logoRecolorreSize.png" />
-                </section>
-            </div>
+                </div>*@
+                <img class="logo" src="~/Content/SASS/GFX/logoRecolorreSize.png" />
+            @*</section>
         </div>
+    </div>*@
 
 
-    </header>
+
 
 
 
@@ -392,4 +394,5 @@
             async defer></script>
     <script src="~/scripts/JavaScript.js"></script>
 </body>
+
 </html>
