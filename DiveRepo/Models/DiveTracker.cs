@@ -13,30 +13,35 @@ namespace DiveRepo
 
         public string Longitude { get; set; }
 
+        public string Navn { get; set; }
+
         public string Latitude { get; set; }
 
-        public Boolean  Sikker { get; set; }
+        public bool Sikker { get; set; }
 
-        public int  LandAfstand { get; set; }
+        public int LandAfstand { get; set; }
 
         public string Beskrivelse { get; set; }
-
-        public string Billeder { get; set; }
-
-        public string Video { get; set; }
 
         public int Rateing { get; set; }
 
         public string BundForhold { get; set; }
 
-        public string BundDybde { get; set; }
+        public int BundDybde { get; set; }
 
-      
-        
-        
-        
-        
-          
-         
+        public string LongitudeDec { get; set; }
+
+        public string LatitudeDec { get; set; }
+
+        public string Billeder { get; set; }
+
+
+
+
+
+
+
+
+
     }
 }
