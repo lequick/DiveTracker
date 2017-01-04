@@ -1,0 +1,336 @@
+﻿@import 'SharedSASS.scss';
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+body {
+    background: url(GFX/bgImg.jpg) no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: $FontStack;
+    color: $MainGrey;
+}
+
+/*LOGO*/
+.logo{
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+}
+.map-container {
+    position: relative;
+}
+
+
+
+.map {
+    width: 500px;
+    height: 400px;
+    background-color: #ccc;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/*Nav*/
+
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+
+
+    li {
+        float: none;
+        display: inline-block;
+    }
+}
+
+/*END NAV*/
+
+/*Links*/
+
+a {
+    color: $MainGrey;
+
+    a:active {
+        color: white;
+    }
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+/*END LINKS*/
+
+
+/*Select*/
+
+select {
+    border: none;
+    border-bottom: 1px solid $MainGrey;
+    outline: none;
+    background-color: transparent;
+    width: 190px;
+
+    option {
+        background-color: $MainBlue;
+    }
+}
+
+
+/*END SELECT*/
+
+
+/*Input*/
+input {
+    border: none;
+    border-bottom: 1px solid $MainGrey;
+    outline: none;
+    background-color: transparent;
+    width: 190px;
+
+
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $MainGrey;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $MainGrey;
+    opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $MainGrey;
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $MainGrey;
+}
+
+
+.search .fa-search {
+    position: absolute;
+    top: 233px;
+    left: 225px;
+}
+
+
+/*Icon list*/
+
+
+.spotPick {
+    list-style: none;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+li.snorkling {
+    background-image: url('GFX/Ikoner/fisk - graa.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 40px;
+    margin: .4em 0;
+}
+
+li.vrag {
+    background-image: url('GFX/Ikoner/skibikon.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+li.natur {
+    background-image: url('GFX/Ikoner/naturikongraa.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+li.andet {
+    background-image: url('GFX/Ikoner/andeticongraa.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+
+
+
+
+/*Icon list END*/
+
+hr {
+    width: 780px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+.BoxShadow {
+    -webkit-box-shadow: 1px 1px 20px 10px #000000;
+    box-shadow: 1px 1px 20px 10px #000000;
+    z-index:999;
+}
+
+
+
+html, body {
+    margin: 0;
+}
+
+.map-wrapper {
+    background: url(../SASS/GFX/bgImg.jpg) no-repeat 0 0;
+    background-size: cover;
+}
+
+#map {
+    width: 83%;
+    height: 100vh;
+    float:right;
+
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $MainBlue;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e7e7e7;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav ul {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e7e7e7;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+/*_____________NAV________________*/
+
+.deskNav{
+    background-color:rgba(22,38,76,0.7);
+    height:100vh;
+    font-size:20px;
+
+    
+}
+
+nav li{
+    list-style-type:none;
+    margin-top:30px;
+
+}
+
+nav h1{
+    font-size:1.3em;
+    margin-bottom:70px;
+    margin-left:30px;
+    font-weight:500;
+    margin-top:70px
+
+}
+
+/*.navBox{
+    margin-top:100px;
+}*/
+
+.spotType{
+    margin-top:50px;
+    margin-bottom:20px;
+}
+
+.deskNav ul.spotPick {
+    list-style: none;
+    margin-left: -5px;
+    padding: 0;
+    font-size: 20px;
+
+}
+
+.deskNav li.snorkling {
+    background-image: url('GFX/Ikoner/fisk - graa.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 40px;
+    margin: .4em 0;
+}
+
+.deskNav li.vrag {
+    background-image: url('GFX/Ikoner/skibikon.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 40px;
+    margin: .4em 0;
+}
+
+.deskNav li.natur {
+    background-image: url('GFX/Ikoner/naturikongraa.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 40px;
+    margin: .4em 0;
+}
+
+.deskNav li.andet {
+    background-image: url('GFX/Ikoner/andeticongraa.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 40px;
+    margin: .4em 0;
+}
+
