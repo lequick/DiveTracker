@@ -53,5 +53,13 @@ namespace DiveTracker
         }
 
         public HttpPostedFileBase Billeder { get; set; }
+
+
+        [HttpPost]
+        public ActionResult Edit(DiveRepo.DiveTracker DT)
+        {
+            Df.Update(DT);
+            return RedirectToAction("Index");
+        }
     }
 }
