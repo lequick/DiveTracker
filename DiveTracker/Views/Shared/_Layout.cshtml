@@ -1,40 +1,395 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta name="description" content="Siden med alt om uv-jagt, dykning og de bedste dykker spots i Norden" />
+    <meta name="keywords" content="uvjagt, uv-jagt, spearfishing, jagt, spots, jagtspot, fangst, rapporter, logbog, beretning, uv, jagt, torsk, fisk, lystfiskeri, lystfisker ørreder, havøred, havøreder, dykning, spots, dykkertur, vrag, dykkerspots, vragspots" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - UV-Jagt & Dykker-spots</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/SASS/MainSASS.min.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300|Source+Sans+Pro:700" rel="stylesheet">
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+
+
+
+
+    @*<header>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="infoLinks" class="col-md-2">
+                    <ul class="spotPick">
+                        <li class="snorkling"><a href="#">Snorkling/UV-jagt</a></li>
+                        <li class="vrag"><a href="#">Skibsvrag</a></li>
+                        <li class="natur"><a href="#">Natur</a></li>
+                        <li class="andet"><a href="#">Andet</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-offset-3 col-md-2">
+                    <img class="img-responsive" src="~/Content/SASS/GFX/logoRecolorreSize.png" alt="Logo" />
+                </div>
+                <div class="col-md-offset-3 col-md-2">
+                    <ul class="nav navbar-nav navbar-right ">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
+        <nav class="navbar navbar-inverse visible-md visible-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">FORSIDE</a></li>
+                                <li><a href="#">GALLERIER</a></li>
+                                <li><a href="#">UDSTYR</a></li>
+                                <li><a href="#">LOVGIVNING</a></li>
+                                <li><a href="#">VEJRET</a></li>
+                                <li><a href="#">ARTIKLER</a></li>
+                                <li><a href="#">LOGBOGEN</a></li>
+                            </ul>*@
+    @*<ul class="nav navbar-nav navbar-right ">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>*@
+    @*</div>
+            </div>
+        </div>*@
+    @*<hr />*@
+    @*<img id="rope" src="~/Content/SASS/GFX/ropeFull.png" />*@
+    @*<div class="row">
+                        <nav class="navbar navbar-inverse visible-md visible-lg">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse" id="myNavbar">
+                                    <ul class="nav navbar-nav">
+                                        <li>
+                                            <select>
+                                                <option value="" disabled selected>Vælg landsdel</option>
+                                                <option value="nordjylland">Nordjylland</option>
+                                                <option value="oestjylland">Østjylland</option>
+                                                <option value="vestjylland">Vestjylland</option>
+                                                <option value="sydjylland">Sydjylland</option>
+                                                <option value="fyn">Fyn</option>
+                                                <option value="sjaelland">Sjælland</option>
+                                                <option value="lolfals">Lolland, Falster</option>
+                                                <option value="bornholm">Bornholm</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <div class="search">
+                                                <span class="fa fa-search"></span>
+                                                <input placeholder="Søg på position...">
+                                            </div>
+                                        </li>
+                                        <li><a href="#">Positions liste</a></li>
+                                        <li><a href="#">Bedste bedømte</a></li>
+                                        <li><a href="#">Nyeste positioner</a></li>
+                                        <li><a href="#">Opret position</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </nav>
+        </header>*@
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
+    @*<div class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    @*<div class="map-wrapper">
+            <p>Google map with a transparent background.</p>
+            <div id="map"></div>
+        </div>*@
+
+
+
+    @*<div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="map" class="BoxShadow">
+
+
+
+
+                        <script>
+
+
+
+
+
+                            var map;
+                            function initMap() {
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                    center: { lat: 56.434003, lng: 10.871666 },
+                                    zoom: 7,
+                                    styles: [
+            {
+                "featureType": "all",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "invert_lightness": true
+                    },
+                    {
+                        "saturation": 10
+                    },
+                    {
+                        "lightness": 30
+                    },
+                    {
+                        "gamma": 0.5
+                    },
+                    {
+                        "hue": "#435158"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#14244a"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#1a8dc1"
+                    }
+                ]
+            }
+                                    ]
+                                });
+
+                            }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    @*______________________________V1 END___________________________*@
+
+
+    <header>
+
+        @*_____________________MOBILE&TABLET__________________________*@
+        <div class="container-fluid hidden-lg">
+            <div class="row">
+                <nav class="col-md-2">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div>
+                            <select>
+                                <option value="" disabled selected>Vælg landsdel</option>
+                                <option value="nordjylland">Nordjylland</option>
+                                <option value="oestjylland">Østjylland</option>
+                                <option value="vestjylland">Vestjylland</option>
+                                <option value="sydjylland">Sydjylland</option>
+                                <option value="fyn">Fyn</option>
+                                <option value="sjaelland">Sjælland</option>
+                                <option value="lolfals">Lolland, Falster</option>
+                                <option value="bornholm">Bornholm</option>
+                            </select>
+
+                            <div class="search">
+                                <span class="fa fa-search"></span>
+                                <input placeholder="Søg på position...">
+                            </div>
+                        </div>
+                        <ul>
+                            <li><a href="#">Positions liste</a></li>
+                            <li><a href="#">Bedste bedømte</a></li>
+                            <li><a href="#">Nyeste positioner</a></li>
+                            <li><a href="#">Opret position</a></li>
+                        </ul>
+                    </div>
+
+
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+                    <script>
+                        function openNav() {
+                            document.getElementById("mySidenav").style.width = "250px";
+                        }
+
+                        function closeNav() {
+                            document.getElementById("mySidenav").style.width = "0";
+                        }
+                    </script>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+        @*________________________________END_MOBILE&TABLET__________________________*@
+        <div class="container-fluid hidden-xs hidden-sm hidden-md">
+            <div class="row">
+
+                <nav class="col-lg-2 deskNav BoxShadow">
+                    <div class="navBox">
+                        <ul>
+                            <li><h1>SPOT MENU</h1></li>
+                            <li>
+                                <select>
+                                    <option value="" disabled selected>Vælg landsdel</option>
+                                    <option value="nordjylland">Nordjylland</option>
+                                    <option value="oestjylland">Østjylland</option>
+                                    <option value="vestjylland">Vestjylland</option>
+                                    <option value="sydjylland">Sydjylland</option>
+                                    <option value="fyn">Fyn</option>
+                                    <option value="sjaelland">Sjælland</option>
+                                    <option value="lolfals">Lolland, Falster</option>
+                                    <option value="bornholm">Bornholm</option>
+                                </select>
+                            </li>
+                            <li>
+                                <div class="search">
+                                    <span class="fa fa-search"></span>
+                                    <input placeholder="Søg på position...">
+                                </div>
+                            </li>
+                            <li><a href="#">Positions liste</a></li>
+                            <li><a href="#">Bedste bedømte</a></li>
+                            <li><a href="#">Nyeste positioner</a></li>
+                            <li><a href="#">Opret position</a></li>
+                            <li class="spotType"><h1>SPOT TYPE</h1></li>
+                            <li>
+                                <ul class="spotPick">
+                                    <li class="snorkling"><a href="#">Snorkling/UV-jagt</a></li>
+                                    <li class="vrag"><a href="#">Skibsvrag</a></li>
+                                    <li class="natur"><a href="#">Natur</a></li>
+                                    <li class="andet"><a href="#">Andet</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <section>
+                    <div id="map" class="map-container map">
+
+
+
+
+                        <script>
+
+
+
+
+
+                            var map;
+                            function initMap() {
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                    center: { lat: 56.434003, lng: 10.871666 },
+                                    zoom: 7,
+                                    styles: [
+            {
+                "featureType": "all",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "invert_lightness": true
+                    },
+                    {
+                        "saturation": 10
+                    },
+                    {
+                        "lightness": 30
+                    },
+                    {
+                        "gamma": 0.5
+                    },
+                    {
+                        "hue": "#435158"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#14244a"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#1a8dc1"
+                    }
+                ]
+            }
+                                    ]
+                                });
+
+                            }
+                        </script>
+
+                    </div>
+                    <img class="logo" src="~/Content/SASS/GFX/logoRecolorreSize.png" />
+                </section>
+            </div>
+        </div>
+
+
+    </header>
+
+
+
+    @RenderBody()
+    @*<footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+        </footer>*@
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKz8oJyVEg-8E2cLdECOo48nTqol1ywxw&callback=initMap"
+            async defer></script>
+    <script src="~/scripts/JavaScript.js"></script>
 </body>
 </html>

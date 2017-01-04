@@ -118,18 +118,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Icons\Air.png" />
-    <Content Include="Content\Icons\Slipway.png" />
-    <Content Include="Content\Icons\Spot.png" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\SASS\GFX\Ikoner\wheelResize.png" />
+    <Content Include="scripts\JavaScript.js" />
+    <Content Include="Content\SASS\GFX\bgImg.jpg" />
+    <Content Include="Content\SASS\GFX\Ikoner\andeticongraa.png" />
+    <Content Include="Content\SASS\GFX\Ikoner\arrowDown.png" />
+    <Content Include="Content\SASS\GFX\Ikoner\check-markgraa.png" />
+    <Content Include="Content\SASS\GFX\Ikoner\fisk - graa.png" />
+    <Content Include="Content\SASS\GFX\Ikoner\naturikongraa.png" />
+    <Content Include="Content\SASS\GFX\Ikoner\skibikon.png" />
+    <Content Include="Content\SASS\GFX\Ikoner\søgeikon.png" />
+    <Content Include="Content\myStyle.css" />
+    <Content Include="Content\SASS\GFX\logoRecolorreSize.png" />
+    <Content Include="Content\SASS\MainSASS.css">
+      <DependentUpon>MainSASS.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\SASS\MainSASS.min.css">
+      <DependentUpon>MainSASS.css</DependentUpon>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\HtmlPage1.html" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Content\SASS\SharedSASS.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="Content\SASS\MainSASS.scss" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
@@ -139,19 +157,16 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DiveController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\MailFac.cs" />
-    <Compile Include="Helpers\Uploader.cs" />
+    <Compile Include="Models\DiveTracker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Dive\AddPosition.cshtml" />
@@ -159,6 +174,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

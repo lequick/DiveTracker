@@ -1,0 +1,78 @@
+﻿body {
+    background: url(GFX/bgImg.jpg) no-repeat center center fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif, Verdana;
+    color: #e7e7e7;
+}
+
+
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-nav > li
+{
+    float: none;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+/*_____________________________ICON LIST_____________________*/
+
+
+.iconlist {
+    list-style: none;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 12px;
+}
+
+li.home {
+    background-image: url(GFX/Ikoner/);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+li.info {
+    background-image: url(GFX/Ikoner/);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+li.print {
+    background-image: url(GFX/Ikoner/);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+li.kontakt {
+    background-image: url(GFX/Ikoner/);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
+
+li.mail {
+    background-image: url(GFX/Ikoner/);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding: 3px 0 3px 20px;
+    margin: .4em 0;
+}
