@@ -1,15 +1,25 @@
-﻿
+﻿@using DiveRepo
+@model List<DiveRepo.DiveTracker>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#hi").click(function () {
+            $("#one").fadeToggle();
+        });
+    });
+</script>
 <div class="container-fluid hidden-lg">
     <div class="row">
+
+
         <header>
             <nav class="col-md-2">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
                     <div>
                         <select>
                             <option value="" disabled selected>Vælg landsdel</option>
@@ -37,20 +47,31 @@
                 </div>
 
 
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+                    <img src="~/Content/SASS/GFX/Ikoner/wheelResize.png" />
+                </span>
 
                 <script>
-                        function openNav() {
-                            document.getElementById("mySidenav").style.width = "250px";
-                        }
+                    function openNav() {
+                        document.getElementById("mySidenav").style.width = "250px";
+                    }
 
-                        function closeNav() {
-                            document.getElementById("mySidenav").style.width = "0";
-                        }
+                    function closeNav() {
+                        document.getElementById("mySidenav").style.width = "0";
+                    }
+
+                    function closeTrans() {
+                        document.getElementById("transbox").style.width = "0";
+                    }
                 </script>
 
             </nav>
         </header>
+
+
+            <div><a href="javascript:void(0)" class="closebtn" onclick="parentNode.remove()"><div class="transbox"><p class="pTrans">Download vores App <b>her</b></p><p class="pTrans">Forsæt til mobil venlig side <b>her</b></p></div></a>
+
+        </div>
     </div>
 
 </div>
@@ -59,8 +80,8 @@
 <div class="container-fluid hidden-xs hidden-sm hidden-md">
     <div class="row">
         <header>
-            <nav class="col-lg-2 deskNav BoxShadow">
-                <div class="navBox">
+            <nav class="col-lg-2 deskNav ">
+                <div>
                     <ul>
                         <li><h1>SPOT MENU</h1></li>
                         <li>
@@ -85,7 +106,7 @@
                         <li><a href="#">Positions liste</a></li>
                         <li><a href="#">Bedste bedømte</a></li>
                         <li><a href="#">Nyeste positioner</a></li>
-                        <li><a href="#">Opret position</a></li>
+                        <li><a href="/Dive/AddPosition">Opret position</a></li>
                         <li class="spotType"><h1>SPOT TYPE</h1></li>
                         <li>
                             <ul class="spotPick">
@@ -99,3 +120,106 @@
                 </div>
             </nav>
         </header>
+        <div class="col-lg-10">
+            <script language="javascript" type="text/javascript">
+
+                function AddAlert(url, message) {
+
+                    alert(message);
+                    window.open(url, '_self');
+
+                    return true;
+
+                }
+
+            </script>
+
+
+            <div id="map" class="BoxShadow ">
+            </div>
+
+            <script>
+                var map;
+
+                function initMap() {
+                    var myCenter = new google.maps.LatLng(56.41578, 10.87825);
+                    var mapCanvas = document.getElementById("map");
+                    var mapOptions = {
+                        center: myCenter,
+                        zoom: 7,
+                        zoomControl: true,
+                        scrollwheel: false,
+                        styles: [
+       {
+           "featureType": "all",
+           "elementType": "all",
+           "stylers": [
+               {
+                   "invert_lightness": true
+               },
+               {
+                   "saturation": 10
+               },
+               {
+                   "lightness": 30
+               },
+               {
+                   "gamma": 0.5
+               },
+               {
+                   "hue": "#435158"
+               }
+           ]
+       },
+       {
+           "featureType": "landscape",
+           "elementType": "geometry.fill",
+           "stylers": [
+               {
+                   "color": "#14244a"
+               }
+           ]
+       },
+       {
+           "featureType": "water",
+           "elementType": "geometry.fill",
+           "stylers": [
+               {
+                   "color": "#1a8dc1"
+               }
+           ]
+       }
+                        ]
+                    };
+                    var map = new google.maps.Map(mapCanvas, mapOptions);
+                    @foreach (DiveTracker dt in Model)
+          {
+
+
+                @:  var marker = new google.maps.Marker({
+                                                              @: position: new google.maps.LatLng(@dt.LatitudeDec, @dt.LongitudeDec)
+
+               @:   });
+                                                      @:marker.setMap(map);
+                                                     @: var infowindow = new google.maps.InfoWindow({
+                                                             @: });
+
+          }
+
+
+                    google.maps.event.addListener(marker, 'click', function () {
+                        var pos = map.getZoom();
+                        map.setZoom(15);
+                        map.setCenter(marker.getPosition());
+                        window.setTimeout(function () { map.setZoom(pos); }, 3000);
+                    });
+                }
+
+
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCAsbuyApEN7aLJBytasBQhANvXZbywgI&callback=initMap" async defer></script>
+
+        </div>
+    </div>
+</div>
+

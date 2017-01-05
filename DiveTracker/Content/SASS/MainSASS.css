@@ -13,7 +13,8 @@ body {
 .logo {
   position: absolute;
   top: 0;
-  left: 50%; }
+  left: 53%;
+  z-index: 999; }
 
 .map-container {
   position: relative; }
@@ -30,13 +31,6 @@ textarea {
   max-width: 280px; }
 
 /*Nav*/
-.navbar-nav {
-  width: 100%;
-  text-align: center; }
-  .navbar-nav li {
-    float: none;
-    display: inline-block; }
-
 /*END NAV*/
 /*Links*/
 a {
@@ -135,8 +129,7 @@ hr {
 
 .BoxShadow {
   -webkit-box-shadow: 1px 1px 20px 10px #000000;
-  box-shadow: 1px 1px 20px 10px #000000;
-  z-index: 999; }
+  box-shadow: 1px 1px 20px 10px #000000; }
 
 html, body {
   margin: 0; }
@@ -146,7 +139,7 @@ html, body {
   background-size: cover; }
 
 #map {
-  width: 83%;
+  width: 100%;
   height: 100vh;
   float: right; }
 
@@ -196,7 +189,6 @@ html, body {
 
 /*_____________NAV________________*/
 .deskNav {
-  background-color: rgba(22, 38, 76, 0.7);
   height: 100vh;
   font-size: 20px; }
 
@@ -211,9 +203,13 @@ nav h1 {
   font-weight: 500;
   margin-top: 70px; }
 
-/*.navBox{
-    margin-top:100px;
-}*/
+.navbar-nav {
+  width: 100%;
+  text-align: center; }
+  .navbar-nav li {
+    float: none;
+    display: inline-block; }
+
 .spotType {
   margin-top: 50px;
   margin-bottom: 20px; }
@@ -251,4 +247,20 @@ nav h1 {
   background-position: 0 50%;
   padding: 3px 0 3px 40px;
   margin: .4em 0; }
+
+.transbox {
+  margin: 30px;
+  background-color: black;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.2);
+  height: 75vh; }
+
+.transbox p {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px; }
+
+/*FORM*/
+.AddForm {
+  margin-top: 30px; }
 

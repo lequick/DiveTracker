@@ -1606,7 +1606,6 @@ pre code {
   }
 }
 .container-fluid {
-  padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
@@ -2556,8 +2555,8 @@ output {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #555;
-  background-color: #fff;
+  color: #e7e7e7;
+  background-color: rgba(0, 0, 0, .075);
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -3063,6 +3062,7 @@ fieldset[disabled] a.btn {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
+  margin-left:40px;
 }
 .btn-default:focus,
 .btn-default.focus {

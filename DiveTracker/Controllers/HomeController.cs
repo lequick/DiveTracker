@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DiveRepo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace DiveTracker.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        DiveFac Df = new DiveFac();
         public ActionResult Index()
         {
-            return View();
+
+            return View(Df.GetAll());
         }
     }
 }
